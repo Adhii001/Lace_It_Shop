@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'index_page.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div style="text-align:center">
+    <h1>Contact Data</h1>
+    <form enctype="multipart/form-data" style="border-size:5px">
+        <table width="100%">
+            <tr>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>SUBJECT</th>
+                <th>PHONE</th>
+                <th>MESSAGE</th>
+                <th>OPERATIONS</th>
+
+
+            </tr>
+
+            {% for d in data %}
+            <tr>
+                <td>{{d.cname}}</td>
+                <td>{{d.cemail}}</td>
+                <td>{{d.csubject}}</td>
+                <td>{{d.cphone}}</td>
+                <td>{{d.cmessage}}</td>
+                <td>
+                    <a href="">
+                        <button type="button">Delete</button>
+                    </a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
+{% endblock %}
